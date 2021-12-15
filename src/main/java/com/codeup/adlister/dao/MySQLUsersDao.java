@@ -96,8 +96,8 @@ public class MySQLUsersDao implements Users {
         String query = "UPDATE user SET username = ?, email = ? WHERE id = ?";
         PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-        stmt.setString(1, user.getEmail());
-        stmt.setString(2, user.getUsername());
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getEmail());
         stmt.setLong(3, user.getId());
 
         stmt.executeUpdate();
