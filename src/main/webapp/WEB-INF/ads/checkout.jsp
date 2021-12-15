@@ -19,7 +19,7 @@ request.getSession().setAttribute("cart", emptyCart);
 <div class="container d-flex flex-column justify-content-center align-items-center h-75">
     <h1>You have successfully submitted your order!</h1>
     <h3>Thanks for shopping with your friendly online farmer's market,</h3>
-    <h1>Fresh Feed!</h1>
+    <h1>FreshFeed!</h1>
     <hr>
     <a href="ads">
         <button class="btn btn-info btn-sm m-2">View All Products</button>
