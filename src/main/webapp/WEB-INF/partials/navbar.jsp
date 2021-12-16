@@ -8,14 +8,16 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="w-100 navbar-header d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="/FreshFeed"><h1>FreshFeed</h1></a>
+            <a class="navbar-brand" href="/FreshFeed"><h1>The Fresh Feed</h1></a>
             <form class="form-inline" action="/ads" method="post">
                 <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light btn-lg" type="submit"><i class="fas fa-search"></i></button>
             </form>
         <ul class="nav d-flex">
             <li class="m-2"><a class="icon" href="/cart"><i class="fas fa-cart-plus fa-2x" data-toggle="tooltip" data-placement="bottom" title="Cart"></i></a></li>
+<%--
             <li class="m-2"><a class="icon" href="/fav"><i class="far fa-star fa-2x" data-toggle="tooltip" data-placement="bottom" title="Favorites"></i></a></li>
+--%>
 
             <c:choose>
                 <c:when test="${user != null}">

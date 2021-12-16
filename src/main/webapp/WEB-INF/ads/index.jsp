@@ -13,12 +13,12 @@
 <div>
     <!--put category drop down here where user can choose from list of categories and see items in that category-->
 </div>
-    <h1 class="m-2">Our current tasty offerings!</h1>
-
-    <form action="/ads" method="post" class="form-inline my-2 my-lg-0">
+    <form action="/ads" method="post" class="form-inline mt-5">
         <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+
+    <h1 class="m-2">Our current tasty offerings!</h1>
 
 <div class="row row-cols-1 row-cols-md-3 m-5">
 

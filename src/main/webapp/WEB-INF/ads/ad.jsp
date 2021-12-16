@@ -29,25 +29,42 @@
                     ipsam, porro quae. Delectus iste nam obcaecati sunt.</p>
                 <h4>$${ad.price}</h4>
                 <div class="row justify-content-end">
-                    <form action="/addToCart" method="post">
-                    <button type="submit" class="btn btn-info btn-sm m-2" data-toggle="tooltip" data-placement="bottom"
-                            title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
-                            <input type="hidden" name="ad" value="${ad.id}">
-                    </form>
-                    <!--add functionality-->
-                    <form action="/addToFavs" method="post">
-                    <button type="submit" class="btn btn-info btn-sm m-2" data-toggle="tooltip" data-placement="bottom"
-                            title="Add to Favorites"><i class="far fa-star"></i></button>
-                            <input type="hidden" name="ad" value="${ad.id}">
-                    </form>
-                    <!--add functionality-->
-                    <c:choose>
-                        <c:when test=""> <!--when ad.ven_id equals vendor.id-->
 
+                    <c:choose>
+                        <c:when test="${user == null}"> <!--when ad.ven_id equals vendor.id-->
+                            <p><em>Please <a href="/login">sign in</a> or <a href="/register">register</a> for an account</em></p>
                         </c:when>
                         <c:otherwise>
-                            <a href="/delete/${ad.id}">Delete</a>
-                            <a href="/edit/${ad.id}">Edit</a>
+                            <form action="/addToCart" method="post">
+                                <button type="submit" class="btn btn-info btn-sm m-2" data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Add to Cart"><i class="fas fa-cart-plus fa-2x"></i></button>
+                                <input type="hidden" name="ad" value="${ad.id}">
+                            </form>
+
+                            <form action="/addToFavs" method="post">
+                                <button type="submit" class="btn btn-info btn-sm m-2" data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Add to Favorites"><i class="far fa-star fa-2x"></i></button>
+                                <input type="hidden" name="ad" value="${ad.id}">
+                            </form>
+
+                            <a href="/edit/${ad.id}" class="btn btn-secondary">
+                                <button type="submit" class="btn btn-secondary m-2" data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Edit">Edit</button>
+                                <input type="hidden" name="ad" value="${ad.id}">
+                            </a>
+
+                            <a href="/delete/${ad.id}" class="btn btn-danger">
+                                <button type="submit" class="btn btn-danger m-2" data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Delete">Delete</button>
+                                <input type="hidden" name="ad" value="${ad.id}">
+                            </a>
+
+<%--                            <a href="/delete/${ad.id}" class="btn btn-danger">Delete</a>--%>
+<%--                            <a href="/edit/${ad.id}" class="btn btn-secondary">Edit</a>--%>
                         </c:otherwise>
                     </c:choose>
 
